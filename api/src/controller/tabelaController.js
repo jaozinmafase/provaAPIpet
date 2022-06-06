@@ -10,9 +10,8 @@ server.post('/tabela/cadastrar', async (req, resp) => {
         const novoPet = req.body;
         const resposta = await cadastrar(novoPet);
                 
-        resp.send(resposta)
-    }catch(err)
-    {
+        resp.send(resposta);
+    }   catch(err){
         resp.status(400).send({
             erro: err.message
         })
@@ -25,8 +24,8 @@ server.get('/tabela', async (req, resp) =>{
         const resposta = await consultar();
         resp.send(resposta)
     }catch(err){
-        resp.status(400).send({
-            erro: err.message
+        resp.status(400)({
+            erro:err.message
         })
     }
 })
