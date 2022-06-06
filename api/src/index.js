@@ -3,7 +3,7 @@ import 'dotenv/config'
 import express from "express";
 import cors from "cors" ;
 
-import tabelaController from './controller/tabelaController';
+import tabelaController from '../src/controller/tabelaController.js';
 
 
 const server = express();
