@@ -8,4 +8,4 @@ const con = await mysql.createConnection({
 })
 
 
-export { con }
+export { con };

@@ -5,11 +5,11 @@ const server = Router();
 import {cadastrar, consultar} from '../repository/tabelaRepository.js'
 
 
-server.post(cadastrar, async (req, resp) => {
+server.post('/tabela/cadastrar', async (req, resp) => {
     try{
-        const {nome} = req.query;
-        const resposta = await cadastrar(nome);
-
+        const novoPet = req.body;
+        const resposta = await cadastrar(novoPet);
+                
         resp.send(resposta)
     }catch(err)
     {
@@ -20,11 +20,9 @@ server.post(cadastrar, async (req, resp) => {
 }) 
 
 
-server.get(consultar, async (req, resp) =>{
+server.get('/tabela', async (req, resp) =>{ 
     try{
-        const {id, nome} = req.body;
-        const resposta = await consultar(id, nome);
-        
+        const resposta = await consultar();
         resp.send(resposta)
     }catch(err){
         resp.status(400).send({
