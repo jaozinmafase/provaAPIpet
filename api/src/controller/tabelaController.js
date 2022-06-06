@@ -20,7 +20,7 @@ server.post(cadastrar, async (req, resp) => {
 }) 
 
 
-server.get(tabela/consultar, async (req, resp) =>{
+server.get(consultar, async (req, resp) =>{
     try{
         const {id, nome} = req.body;
         const resposta = await consultar(id, nome);
